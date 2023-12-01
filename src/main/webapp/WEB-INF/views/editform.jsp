@@ -13,6 +13,7 @@
 <form action="../editok" method="POST">
 <input type="hidden" name="seq" value="${u.seq}"/>
 <table id="edit">
+ <tr><td>Category:</td><td><input type="text" name="category" value="${u.category}"/></td></tr>
 <tr><td>Title:</td><td><input type="text" name="title" value="${u.title}"/></td></tr>
 <tr><td>Writer:</td><td><input type="text" name="writer" value="${u.writer}" /></td></tr>
 <tr><td>Content:</td><td><textarea cols="50" rows="5" name="content">${u.content}</textarea></td></tr>
