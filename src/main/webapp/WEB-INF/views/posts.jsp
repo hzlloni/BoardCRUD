@@ -31,7 +31,7 @@
 <script>
 	function delete_ok(id){
 		var a = confirm("정말로 삭제하겠습니까?");
-		if(a) location.href='deletepost.jsp?id=' + id;
+		if(a) location.href='deleteok/{id}.jsp?id=' + id;
 	}
 </script>
 </head>
@@ -40,6 +40,7 @@
 <table id="list" width="90%">
 <tr>
 	<th>Id</th>
+	<th>Category</th>
 	<th>Title</th>
 	<th>Writer</th>
 	<th>Content</th>
@@ -56,7 +57,7 @@
 		<td>${u.content}</td>
 		<td>${u.regdate}</td>
 		<td><a href="editform/${u.seq}">Edit</a></td>
-		<td><a href="javascript:delete_ok('${u.seq}')">Delete</a></td>
+		<td><a href="deleteok/${u.seq}">Delete</a></td>
 	</tr>
 </c:forEach>
 </table>
