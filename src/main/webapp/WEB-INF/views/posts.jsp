@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" isELIgnored="false"%>
 <%@page import="com.crud.dao.BoardDAO, com.crud.bean.BoardVO,java.util.*"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
@@ -37,11 +37,6 @@
 </head>
 <body>
 <h1>자유게시판</h1>
-<%
-	BoardDAO boardDAO = new BoardDAO();
-	List<BoardVO> list = boardDAO.getBoardList();
-	request.setAttribute("list",list);
-%>
 <table id="list" width="90%">
 <tr>
 	<th>Id</th>
@@ -54,16 +49,17 @@
 </tr>
 <c:forEach items="${list}" var="u">
 	<tr>
-		<td>${u.getSeq()}</td>
-		<td>${u.getTitle()}</td>
-		<td>${u.getWriter()}</td>
-		<td>${u.getContent()}</td>
-		<td>${u.getRegdate()}</td>
-		<td><a href="editform.jsp?id=${u.getSeq()}">Edit</a></td>
-		<td><a href="javascript:delete_ok('${u.getSeq()}')">Delete</a></td>
+		<td>${u.seq}</td>
+		<td>${u.category}</td>
+		<td>${u.title}</td>
+		<td>${u.writer}</td>
+		<td>${u.content}</td>
+		<td>${u.regdate}</td>
+		<td><a href="editform/${u.seq}">Edit</a></td>
+		<td><a href="javascript:delete_ok('${u.seq}')">Delete</a></td>
 	</tr>
 </c:forEach>
 </table>
-<br/><a href="addpostform.jsp">Add New Post</a>
+<br><button type="button" onclick="location.href='add'">게시판 추가하기</button>
 </body>
 </html>

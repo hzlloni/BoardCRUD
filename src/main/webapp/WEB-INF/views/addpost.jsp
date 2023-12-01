@@ -2,8 +2,6 @@
     pageEncoding="UTF-8"%>
 <%@page import="com.crud.dao.BoardDAO"%>
 
-<% request.setCharacterEncoding("utf-8"); %>
-
 <jsp:useBean id="u" class="com.crud.bean.BoardVO" />
 <jsp:setProperty property="*" name="u"/>
 

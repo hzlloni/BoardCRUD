@@ -4,6 +4,7 @@ import java.util.Date;
 
 public class BoardVO {
 	private int seq;
+	private String Category;
 	private String title;
 	private String writer;
 	private String content;
@@ -45,5 +46,13 @@ public class BoardVO {
 	}
 	public void setCnt(int cnt) {
 		this.cnt = cnt;
+	}
+
+	public String getCategory() {
+		return Category;
+	}
+
+	public void setCategory(String category) {
+		Category = category;
 	}
 }
