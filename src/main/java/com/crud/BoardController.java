@@ -62,4 +62,10 @@ public class BoardController {
             System.out.println("데이터 삭제 성공!!!");
         return "redirect:../post";
     }
+    @RequestMapping(value = "/view/{id}", method = RequestMethod.GET)
+    public String viewPost(@PathVariable("id") int id, Model model){
+        BoardVO boardVO = boardService.getBoard(id);
+        model.addAttribute("u", boardVO);
+        return "view";
+    }
 }
